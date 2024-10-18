@@ -1,4 +1,4 @@
-# COMMSENV-24-1347
+# Codes for COMMSENV-24-1347
 MATLAB (R2023a) codes for the article COMMSENV-24-1347.  
 These codes include four categories: observations (OBS), coupled model (CESM), functions, and plotting.  
 If these codes are helpful to you, please acknowledge us in your publication.  
