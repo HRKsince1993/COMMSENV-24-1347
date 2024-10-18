@@ -1,7 +1,7 @@
 # COMMSENV-24-1347
-% Research codes related to the article COMMSENV-24-1347. 
-% These codes include four categories: observations (OBS), CESM, Functions, and Plot.
-% If these codes are helpful to you, please acknowledge us in your publication.
+Research codes related to the article COMMSENV-24-1347.  
+These codes include four categories: observations (OBS), CESM, Functions, and Plot.  
+If these codes are helpful to you, please acknowledge us in your publication.  
 
 Best wishes
 Ruikun Hu
