@@ -22,7 +22,7 @@ for one = 1:10 % 1:Ctrl;2:TPCtrl;3:PMM;4:SEP;5:TIOlg;6:NTAlg;7:NTAandTIOandPMMan
     lat_box = [-5,5];
     %%
     for i1 = 1:length(name1)
-        aimpath = ['F:\2023PMM_Work\Data_Ensamble\Exp_',first_name{one},'\TauyA_Casely\'];
+        aimpath = ['F:\2023PMM_Work\Data_Ensemble\Exp_',first_name{one},'\TauyA_Casely\'];
         if exist(aimpath,'dir')~=7
             mkdir(aimpath);
         end
