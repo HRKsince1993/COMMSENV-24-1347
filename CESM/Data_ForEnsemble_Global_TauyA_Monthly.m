@@ -5,7 +5,7 @@ for one = 1:10 % 1:Ctrl;2:TPCtrl;3:PMM;4:SEP;5:TIOlg;6:NTAlg;7:NTAandTIOandPMMan
     first_name = {'Ctrl','TPCtrl','PMM','SEP','TIOlg','NTAlg','NTAandTIOandPMMandSEPlg','NTAandTIOandPMMandSEPandWWBb','NTAandTIOandPMMandSEPandWWBbmay'...
         ,'NTAandTIOandPMMandSEPandWWBOctNov'};
     
-    path1 = ['F:\2023PMM_Work\Data_Ensamble\Exp_',first_name{one},'\Tauy_Casely\'];
+    path1 = ['F:\2023PMM_Work\Data_Ensemble\Exp_',first_name{one},'\Tauy_Casely\'];
     struct = dir([path1,'*.mat']);
     name1 = {struct.name}';
     
