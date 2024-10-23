@@ -13,7 +13,7 @@ for one = 2:10 % 1:Ctrl;2:TPCtrl;3:PMM;4:SEP;5:TIOlg;6:NTAlg;7:NTAandTIOandPMMan
     first_name = {'Ctrl','TPCtrl','PMM','SEP','TIOlg','NTAlg','NTAandTIOandPMMandSEPlg','NTAandTIOandPMMandSEPandWWBb','NTAandTIOandPMMandSEPandWWBbmay'...
         ,'NTAandTIOandPMMandSEPandWWBOctNov'};
     
-    path1 = ['J:\CESM\Output_Data\HRK_2023ENSO_Ensamble\Exp_',first_name{one},'\'];
+    path1 = ['J:\CESM\Output_Data\HRK_2023ENSO_Ensemble\Exp_',first_name{one},'\'];
     struct = dir(path1);
     name1 = {struct(3:end).name}';
     
@@ -34,7 +34,7 @@ for one = 2:10 % 1:Ctrl;2:TPCtrl;3:PMM;4:SEP;5:TIOlg;6:NTAlg;7:NTAandTIOandPMMan
         end
         
 %         ncdisp([path2,name2{1}])
-        aimpath2 = ['F:\2023PMM_Work\Data_Ensamble\Exp_',first_name{one},'\OcnTemp3D_Global_Casely\'];
+        aimpath2 = ['F:\2023PMM_Work\Data_Ensemble\Exp_',first_name{one},'\OcnTemp3D_Global_Casely\'];
         if exist(aimpath2,'dir')~=7
             mkdir(aimpath2);
         end
