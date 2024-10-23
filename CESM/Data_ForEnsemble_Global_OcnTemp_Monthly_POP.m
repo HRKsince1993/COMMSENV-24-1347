@@ -62,7 +62,7 @@ for one = 1:10 % 1:Ctrl;2:TPCtrl;3:PMM;4:SEP;5:TIOlg;6:NTAlg;7:NTAandTIOandPMMan
         %     bnd_time = etime([1949,1,1,0,0,0],[0,1,1,0,0,0])/3600/24;
         %     [date(:,1),date(:,2),date(:,3),~,~,~] = mjd19502date(time-bnd_time)
         %%
-        readme = 'unit is ¡ãC';
+        readme = 'unit is Â¡Ã£C';
         datapath2 = [aimpath2,'OcnTemp50m_Global_Monthly_',num2str(date(1,1)),'-',num2str(date(1,2),'%2.2i'),'_to_'...
             ,num2str(date(end,1)),'-',num2str(date(end,2),'%2.2i'),'_',name1{i1},'.mat'];
         save(datapath2,'lon','lat','depth','temp','date','time','readme');
