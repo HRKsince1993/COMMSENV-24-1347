@@ -7,25 +7,25 @@ function  [term2_u,term2_v,lon,lat] = hb_term2(lon_read,lat_read,depth_read,temp
 % This issue will be addressed in a future release.
 %
 %   Inputs:
-%      lon_read      - longitude, 1¡Ám. The lon_read must be eastward,ascending and equispaced.
-%      lat_read      - latitude, 1¡Án. The lat_read must be northward and ascending and equispaced.
-%      depth_read    - depth, 1¡Áq. The depth_read must be downward and ascending and equispaced.Unit is m;
+%      lon_read      - longitude, 1Â¡Ãm. The lon_read must be eastward,ascending and equispaced.
+%      lat_read      - latitude, 1Â¡Ãn. The lat_read must be northward and ascending and equispaced.
+%      depth_read    - depth, 1Â¡Ãq. The depth_read must be downward and ascending and equispaced.Unit is m;
 %      temp_tp   - the reference potential temperature data (e.g. climatological),
-%                       m¡Án¡Áq¡Áp, lon¡Álat¡Ádetph¡Átime. Unit is ¡ãC.
+%                       mÂ¡ÃnÂ¡ÃqÂ¡Ãp, lonÂ¡ÃlatÂ¡ÃdetphÂ¡Ãtime. Unit is Â¡Ã£C.
 %      uvel_tp   - the reference zonal ocean current velocity data (e.g. climatological),
-%                       m¡Án¡Áq¡Áp, lon¡Álat¡Ádetph¡Átime. Unit is m/s, m/day or m/month, depends on the temperature data.
+%                       mÂ¡ÃnÂ¡ÃqÂ¡Ãp, lonÂ¡ÃlatÂ¡ÃdetphÂ¡Ãtime. Unit is m/s, m/day or m/month, depends on the temperature data.
 %      vvel_tp   - the reference merional ocean current velocity data (e.g. climatological),
-%                       m¡Án¡Áq¡Áp, lon¡Álat¡Ádetph¡Átime. Unit is m/s, m/day or m/month, depends on the temperature data.
+%                       mÂ¡ÃnÂ¡ÃqÂ¡Ãp, lonÂ¡ÃlatÂ¡ÃdetphÂ¡Ãtime. Unit is m/s, m/day or m/month, depends on the temperature data.
 %      mld_tp    - the reference mixed layer depth data (e.g. climatological),
-%                       m¡Án¡Áp (lon¡Álat¡Átime), or m¡Án or just a number. Unit is m.
+%                       mÂ¡ÃnÂ¡Ãp (lonÂ¡ÃlatÂ¡Ãtime), or mÂ¡Ãn or just a number. Unit is m.
 %
 %      temp_exp   - the original potential temperature data, same as temp_tp.
 %      uvel_exp   - the original zonal ocean current velocity data, same as uvel_tp.
 %      vvel_exp   - the original merional ocean current velocity data, same as vvel_tp.
 %
 %      mld_exp    - the original mixed layer depth data, same as mld_tp.
-%      lon_box    - the longitude boundary of the analyze region,1¡Á2, e.g.,[360-170,360-120];
-%      lat_box    - the latitude boundary of the analuze region,1¡Á2,e.g.,[-5,5];
+%      lon_box    - the longitude boundary of the analyze region,1Â¡Ã2, e.g.,[360-170,360-120];
+%      lat_box    - the latitude boundary of the analuze region,1Â¡Ã2,e.g.,[-5,5];
 %      dx         - the distance of one longitude interval.
 %      dy         - the distance of one latitude interval.
 %
@@ -148,7 +148,7 @@ mld_exp = squeeze(mean(mean(bin_mld_exp,1),2));
 clear term2_u term2_v
 for i1 = 1:size(bin_term2_u,4)
     d1 = depth_read <= min(mld_exp(i1),mld_tp(i1));
-    term2_u(i1) = squeeze(mean(mean(mean(bin_term2_u(:,:,d1,i1),1),2),3));
-    term2_v(i1) = squeeze(mean(mean(mean(bin_term2_v(:,:,d1,i1),1),2),3));
+    term2_u(i1) = squeeze(nanmean(nanmean(nanmean(bin_term2_u(:,:,d1,i1),1),2),3));
+    term2_v(i1) = squeeze(nanmean(nanmean(nanmean(bin_term2_v(:,:,d1,i1),1),2),3));
 end
 end
