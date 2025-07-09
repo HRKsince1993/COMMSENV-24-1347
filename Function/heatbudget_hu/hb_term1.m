@@ -7,17 +7,17 @@ function [term1,lon,lat]= hb_term1(lon_read,lat_read,heatflux_tp,heatflux_exp,ml
 % This issue will be addressed in a future release.
 % 
 %   Inputs:
-%      lon_read      - longitude, 1¡Ám. The lon_read must be eastward,ascending and equispaced.
-%      lat_read      - latitude, 1¡Án. The lat_read must be northward and ascending and equispaced.
+%      lon_read      - longitude, 1Â¡Ãm. The lon_read must be eastward,ascending and equispaced.
+%      lat_read      - latitude, 1Â¡Ãn. The lat_read must be northward and ascending and equispaced.
 %      heatflux_tp   - the reference heat flux data (e.g. climatological),
-%                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is w/m2 or J/month/m2.
+%                       mÂ¡ÃnÂ¡Ãp, lonÂ¡ÃlatÂ¡Ãtime. Unit is w/m2 or J/month/m2.
 %                       Positive value means ocean loss heat.
 %      heatflux_exp  - the original heat flux data, same as heatflux_tp.
-%      mld_tp        - the reference mixed layer depth, m¡Án¡Áp or m¡Án or just a number
+%      mld_tp        - the reference mixed layer depth, mÂ¡ÃnÂ¡Ãp or mÂ¡Ãn or just a number
 % 
 %      mld_exp    - the original mixed layer depth, same as mld_tp
-%      lon_box    - the longitude boundary of the analyze region,1¡Á2, e.g.,[360-170,360-120];
-%      lat_box    - the latitude boundary of the analuze region,1¡Á2,e.g.,[-5,5];
+%      lon_box    - the longitude boundary of the analyze region,1Â¡Ã2, e.g.,[360-170,360-120];
+%      lat_box    - the latitude boundary of the analuze region,1Â¡Ã2,e.g.,[-5,5];
 %      s_d        - the seawater density (default: 1025 kg/m3)
 %      c_p        - the specific heat of seawater at constant pressure (default: 3940 J/kg/K)
 %   The last five data are optional. If mld_exp is empty, mld_exp = mld_tp. 
@@ -99,8 +99,8 @@ lon = lon_read(l_lon);
 lat = lat_read(l_lat);
 
 % TPCtrl
-bin1_tp = heatflux_tp(l_lon,l_lat,:)./(mld_tp(l_lon,l_lat,:)*s_d*c_p);% ¡ãC/month
+bin1_tp = heatflux_tp(l_lon,l_lat,:)./(mld_tp(l_lon,l_lat,:)*s_d*c_p);% Â¡Ã£C/month
 % Exp
-bin1_exp = heatflux_exp(l_lon,l_lat,:)./(mld_exp(l_lon,l_lat,:)*s_d*c_p);% ¡ãC/month
-term1 = squeeze(mean(mean(bin1_exp - bin1_tp,1),2));
+bin1_exp = heatflux_exp(l_lon,l_lat,:)./(mld_exp(l_lon,l_lat,:)*s_d*c_p);% Â¡Ã£C/month
+term1 = squeeze(nanmean(nanmean(bin1_exp - bin1_tp,1),2));
 end
