@@ -7,21 +7,21 @@ function  [term3,lon,lat] = hb_term3(lon_read,lat_read,temp_above_tp,temp_mld_tp
 % This issue will be addressed in a future release.
 % 
 %   Inputs:
-%      lon_read      - longitude, 1¡Ám. The lon_read must be eastward,ascending and equispaced.
-%      lat_read      - latitude, 1¡Án. The lat_read must be northward and ascending and equispaced.
+%      lon_read      - longitude, 1Â¡Ãm. The lon_read must be eastward,ascending and equispaced.
+%      lat_read      - latitude, 1Â¡Ãn. The lat_read must be northward and ascending and equispaced.
 %      temp_above_tp - the reference mean potential temperature above mixed layer depth (e.g. climatological),
-%                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is ¡ãC.
+%                       mÂ¡ÃnÂ¡Ãp, lonÂ¡ÃlatÂ¡Ãtime. Unit is Â¡Ã£C.
 %      temp_mld_tp   - the reference potential temperature 5m below mixed layer depth (e.g. climatological),
-%                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is ¡ãC.
+%                       mÂ¡ÃnÂ¡Ãp, lonÂ¡ÃlatÂ¡Ãtime. Unit is Â¡Ã£C.
 %      wvel_mld_tp   - the reference vertical ocean current velocity at mixed layer depth (e.g. climatological),
-%                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is m/s, m/day or m/month, depends on the temperature data.
+%                       mÂ¡ÃnÂ¡Ãp, lonÂ¡ÃlatÂ¡Ãtime. Unit is m/s, m/day or m/month, depends on the temperature data.
 %                       Positive value is downward.
 %      uvel_mld_tp   - the reference zonal ocean current velocity at mixed layer depth (e.g. climatological),
-%                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is m/s, m/day or m/month, depends on the temperature data.
+%                       mÂ¡ÃnÂ¡Ãp, lonÂ¡ÃlatÂ¡Ãtime. Unit is m/s, m/day or m/month, depends on the temperature data.
 %      vvel_mld_tp   - the reference merional ocean current velocity at mixed layer depth (e.g. climatological),
-%                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is m/s, m/day or m/month, depends on the temperature data.
+%                       mÂ¡ÃnÂ¡Ãp, lonÂ¡ÃlatÂ¡Ãtime. Unit is m/s, m/day or m/month, depends on the temperature data.
 %      mld_tp        - the reference mixed layer depth data (e.g. climatological),
-%                       m¡Án¡Áp (lon¡Álat¡Átime), or m¡Án or just a number. Unit is m.
+%                       mÂ¡ÃnÂ¡Ãp (lonÂ¡ÃlatÂ¡Ãtime), or mÂ¡Ãn or just a number. Unit is m.
 %
 %      temp_above_exp  - the original mean potential temperature above mixed layer depth, same as temp_tp.
 %      wvel_mld_exp    - the original vertical ocean current velocity at mixed layer depth, same as wvel_mld_tp.
@@ -29,8 +29,8 @@ function  [term3,lon,lat] = hb_term3(lon_read,lat_read,temp_above_tp,temp_mld_tp
 %      vvel_mld_exp    - the original merional ocean current velocity at mixed layer depth, same as vvel_mld_tp.
 %
 %      mld_exp    - the original mixed layer depth data, same as mld_tp.
-%      lon_box    - the longitude boundary of the analyze region,1¡Á2, e.g.,[360-170,360-120];
-%      lat_box    - the latitude boundary of the analuze region,1¡Á2,e.g.,[-5,5];
+%      lon_box    - the longitude boundary of the analyze region,1Â¡Ã2, e.g.,[360-170,360-120];
+%      lat_box    - the latitude boundary of the analuze region,1Â¡Ã2,e.g.,[-5,5];
 %      three      -  1:only enter the MLD(w>0) are condisered;2:do not consider enter or out (default: 1)        
 %      dx         - the distance of one longitude interval.
 %      dy         - the distance of one latitude interval.        
@@ -74,7 +74,7 @@ if nargin < 14
     mld_exp = mld_tp;
 end
 
-if three ~= 1 || three ~= 2
+if three ~= 1 && three ~= 2
     error('Parameter three should be 1 or 2');
 elseif ~isequal(size(temp_above_tp), size(temp_above_exp))
     error('The two temp matrix dimensions must be the same');
@@ -149,8 +149,8 @@ end
     bin_evel_exp = wvel_mld_exp2 + dzdt_mld_exp + bin_term_u_exp + bin_term_v_exp;
     
     if three == 1;
-        bin_evel_tp(bin_evel_tp < 0) = 0;% Ö»¿¼ÂÇ¾íÈë
-        bin_evel_exp(bin_evel_exp < 0) = 0;% Ö»¿¼ÂÇ¾íÈë
+        bin_evel_tp(bin_evel_tp < 0) = 0;% Ã–Â»Â¿Â¼Ã‚Ã‡Â¾Ã­ÃˆÃ«
+        bin_evel_exp(bin_evel_exp < 0) = 0;% Ã–Â»Â¿Â¼Ã‚Ã‡Â¾Ã­ÃˆÃ«
     end
     %% dT/H
     % TPCtrl
