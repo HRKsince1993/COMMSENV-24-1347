@@ -169,8 +169,8 @@ end
     bin_term3_tp = -bin_evel_tp.*dTdH_tp;
     bin_term3_exp = -bin_evel_exp.*dTdH_exp;
 
-    term3_tp = squeeze(mean(mean(bin_term3_tp(l_lon,l_lat,:),1),2));
-    term3_exp = squeeze(mean(mean(bin_term3_exp(l_lon,l_lat,:),1),2));
+    term3_tp = squeeze(nanmean(nanmean(bin_term3_tp(l_lon,l_lat,:),1),2));
+    term3_exp = squeeze(nanmean(nanmean(bin_term3_exp(l_lon,l_lat,:),1),2));
 
     term3 = term3_exp - term3_tp;
 end
