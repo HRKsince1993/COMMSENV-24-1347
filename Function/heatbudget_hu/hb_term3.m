@@ -15,7 +15,7 @@ function  [term3,lon,lat] = hb_term3(lon_read,lat_read,temp_above_tp,temp_mld_tp
 %                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is ¡ãC.
 %      wvel_mld_tp   - the reference vertical ocean current velocity at mixed layer depth (e.g. climatological),
 %                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is m/s, m/day or m/month, depends on the temperature data.
-%                       Positive value is downward.
+%                       Positive value is upwelling.
 %      uvel_mld_tp   - the reference zonal ocean current velocity at mixed layer depth (e.g. climatological),
 %                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is m/s, m/day or m/month, depends on the temperature data.
 %      vvel_mld_tp   - the reference merional ocean current velocity at mixed layer depth (e.g. climatological),
