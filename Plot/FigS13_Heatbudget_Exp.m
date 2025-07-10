@@ -74,18 +74,18 @@ for one = 1:5 % 1:PMM;2:SEP;3:TIO;4:NTA;5:NTAandTIOandPMMandSEPlg;6:NTAandTIOand
 
     bar_width = 0.8;
 
-    color_plot = [0,0,0 ...% 1 ºÚÉ«, black, OBS
-        ;215,0,15 ...% 2 ÖĞ¹úºì, China red, TP
-        %         ;151,137,246 ...% 3 À¶×ÏÉ«1, blue and purple 1, NETP
-        %         ;75,0,192 ...% 4 À¶×ÏÉ«, blue and purple, SETP
-        %         ;255,0,255 ... % 5 ×ÏºìÉ«, purple and red, TIO
-        %         ;1,132,127 ...;% 6 Âí¶ûË¹ÂÌ, green, NTA
-        ;255,119,15 ...% 7 °®ÂíÊË³È, orange, All
-        %         ;129,56,188 ...% 8 ²¥¿Í×Ï, vlog purple, NTA_S
-        %         ;131,55,255 ...% 9 ×ÏÉ«, purple, NTA_N
-        ;234,92,129 ...% 10 bilibiliºì, bilibili red,WWB
-        ;76,168,248 ...% 11 À¶É«,blue2, WWBs
-        ;227,173,82 ...% ±¸Ñ¡É« Î¢²©»Æ, weibo yellow
+    color_plot = [0,0,0 ...% 1 é»‘è‰², black, OBS
+        ;215,0,15 ...% 2 ä¸­å›½çº¢, China red, TP
+        %         ;151,137,246 ...% 3 è“ç´«è‰²1, blue and purple 1, NETP
+        %         ;75,0,192 ...% 4 è“ç´«è‰², blue and purple, SETP
+        %         ;255,0,255 ... % 5 ç´«çº¢è‰², purple and red, TIO
+        %         ;1,132,127 ...;% 6 é©¬å°”æ–¯ç»¿, green, NTA
+        ;255,119,15 ...% 7 çˆ±é©¬ä»•æ©™, orange, All
+        %         ;129,56,188 ...% 8 æ’­å®¢ç´«, vlog purple, NTA_S
+        %         ;131,55,255 ...% 9 ç´«è‰², purple, NTA_N
+        ;234,92,129 ...% 10 bilibiliçº¢, bilibili red,WWB
+        ;76,168,248 ...% 11 è“è‰²,blue2, WWBs
+        ;227,173,82 ...% å¤‡é€‰è‰² å¾®åšé»„, weibo yellow
         ]/255; %
     %%
     fig0 = term0_avr;
@@ -140,7 +140,7 @@ for one = 1:5 % 1:PMM;2:SEP;3:TIO;4:NTA;5:NTAandTIOandPMMandSEPlg;6:NTAandTIOand
                 yticklabel{i2} = ' ';
             end
         end
-        ylabel('¡ãC month^{-1}','FontSize',FontSize,'FontName',FontName);
+        ylabel('Â°C month^{-1}','FontSize',FontSize,'FontName',FontName);
     else
         yticklabel = ' ';
         ylabel(' ','FontSize',FontSize,'FontName',FontName);
