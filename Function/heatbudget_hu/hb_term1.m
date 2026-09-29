@@ -11,7 +11,7 @@ function [term1,lon,lat]= hb_term1(lon_read,lat_read,heatflux_tp,heatflux_exp,ml
 %      lat_read      - latitude, 1¡Án. The lat_read must be northward and ascending and equispaced.
 %      heatflux_tp   - the reference heat flux data (e.g. climatological),
 %                       m¡Án¡Áp, lon¡Álat¡Átime. Unit is w/m2 or J/month/m2.
-%                       Positive value means ocean loss heat.
+%                       Positive value means ocean absorbs heat.
 %      heatflux_exp  - the original heat flux data, same as heatflux_tp.
 %      mld_tp        - the reference mixed layer depth, m¡Án¡Áp or m¡Án or just a number
 % 
@@ -41,10 +41,10 @@ if nargin < 5
     error('Needs more than five dataset');
 end
 if nargin < 10
-    c_p = 1025;
+    c_p = 3940;
 end
 if nargin < 9
-    s_d = 3940;
+    s_d = 1025;
 end
 if nargin < 8
     lat_box = [min(lat_read),max(lat_read)];
@@ -52,7 +52,7 @@ end
 if nargin < 7
      lon_box = [min(lon_read),max(lon_read)];
 end
-if nargin < 7
+if nargin < 6
      mld_exp = mld_tp;
 end
 
